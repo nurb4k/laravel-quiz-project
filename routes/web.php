@@ -15,17 +15,15 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::resource('/quizzes', QuizController::class)->except('index');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-    Route::get('/quizzes/show/{quiz}', [QuizController::class, 'showAnswers'])->name('quizzes.answers');
     Route::post('/quizzes/check/{quiz}', [QuizController::class, 'checkAnswers'])->name('quizzes.checkAnswers');
-    Route::delete('/quizzes/{quiz}/delete', [QuizController::class, 'deleteQuiz'])->name('quizzes.delete');
-
-    Route::get('/competition',[CompetitionController::class,'index'])->name('competition.index');
+    Route::post('/quizzes/{quiz}/delete', [QuizController::class, 'deleteQuiz'])->name('quizzes.delete');
+    Route::post('/quizzes/{quiz}/competition',[QuizController::class,'compQuiz'])->name('compt.quiz');
+    Route::post('/quizzes/{quiz}/competition/reset',[QuizController::class,'deCompQuiz'])->name('compt.quiz.delete');
+    Route::get('/competition', [CompetitionController::class, 'index'])->name('competition.index');
     Route::prefix('adm')->as('adm.')->middleware('hasrole:admin')->group(function () {
         Route::get('/users/', [UserController::class, 'index'])->name('users.index');
         Route::get('/users/search', [UserController::class, 'index'])->name('users.search');
-
         Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-
         Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
         Route::put('/users/{user}/ban', [UserController::class, 'ban'])->name('users.ban');
         Route::put('/users/{user}/unban', [UserController::class, 'unban'])->name('users.unban');

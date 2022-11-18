@@ -77,16 +77,7 @@
                 </div>
             </a>
         </li>
-            <li>
-                <a href="{{route('competition.index')}}" aria-expanded="false">
-                    <div class="nav_icon_small">
-                        <img src="img/menu-icon/dashboard.svg" alt="">
-                    </div>
-                    <div class="nav_title">
-                        <span>Competition</span>
-                    </div>
-                </a>
-            </li>
+
 
     </ul>
 </nav>
@@ -106,22 +97,7 @@
                     </label>
                     <div class="header_right d-flex justify-content-between align-items-center">
                         <div class="header_notification_warp d-flex align-items-center">
-                            <li>
-                                <div class="serach_button">
-                                    <i class="ti-search"></i>
-                                    <div class="serach_field-area d-flex align-items-center">
-                                        <div class="search_inner">
-                                            <form action="#">
-                                                <div class="search_field">
-                                                    <input type="text" placeholder="Search here...">
-                                                </div>
-                                                <button class="close_search"><i class="ti-search"></i></button>
-                                            </form>
-                                        </div>
-                                        <span class="f_s_14 f_w_400 ml_25 white_text text_white">Apps</span>
-                                    </div>
-                                </div>
-                            </li>
+
                             <li>
                                 <a class="bell_notification_clicker" href="#"> <img src="img/icon/bell.svg" alt="">
                                     <span>2</span>
@@ -246,15 +222,20 @@
 
             <div class="row">
                 <div class="col-12">
-{{--                    @if ($errors->any())--}}
-{{--                        <div class="alert alert-danger">--}}
-{{--                            <ul>--}}
-{{--                                @foreach ($errors->all() as $error)--}}
-{{--                                    <li>{{ $error }}</li>--}}
-{{--                                @endforeach--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    @endif--}}
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     @yield('content')
                 </div>
             </div>

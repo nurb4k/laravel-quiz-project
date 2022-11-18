@@ -13,4 +13,5 @@ class CompetitionController extends Controller
         $comps= Competition::orderBy('point', 'DESC')->get();
         return view('competitions.index', ['comps' => $comps]);
     }
+
 }

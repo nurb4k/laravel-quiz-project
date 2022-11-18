@@ -11,7 +11,6 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
 
-
             $table->integer('id_user_answerQuestionOn')->nullable();
 //            $table->integer('isCorrect')->nullable();
             $table->string('email')->unique();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Answer;
+use App\Models\Category;
 use App\Models\Competition;
 use App\Models\Question;
 use App\Models\Quiz;
@@ -25,106 +26,115 @@ class QuizController extends Controller
 
     public function create(User $user)
     {
-
-        return view('quizzes.create');
-//        Quiz::create([
-//            'quiz_score' => 10,
-//             'user_id' => Auth::user()->id,
-//        ]);
-
+        $categories =  Category::all();
+        return view('quizzes.create',['categories'=>$categories]);
     }
 
 
     public function store(Request $request)
     {
-//        $questionIds = $request->input('questionId');
-//        $answerIds = $request->input('answerId');
+
         $text_questions = $request->input('text_question');
         $text_answers = $request->input('text_answer');
-        for ($i = 0; $i < count($request->input('text_question')); $i++) {
-            echo $text_questions[$i];
-            echo "\n";
-        }
-        echo "\n";
-        for ($i = 0; $i < count($request->input('text_answer')); $i++) {
-            echo $text_answers[$i];
-            echo "\n";
-        }
+        $name_quiz = $request->input('name_quiz');
+        $category_id = $request->input('category_id');
+        $trueIds = $request->input('isTrue');
+        if ($text_questions != null && $text_answers != null && $trueIds != null ) {
+            $count = 4;
+            for ($i = 1; $i < count($trueIds); $i++) {
+                if (count($trueIds) == 1) {
+                    return $trueIds;
+                } else {
+                    $trueIds[$i] = $trueIds[$i] + $count;
+                }
+                $count += 4;
+            }
 
-//        dd($text_questions);
-//        $quiz = Quiz::create([
-//            'quiz_score' => Auth::user()->name,
-//            'user_id' => Auth::user()->id,
-//        ]);
-//        $sum = 1;
-//        $runs = 4;
-//        for ($x = 1; $x <= 3; $x++) {
-//            $que = Question::create([
-//                'text_question' => $request->input('text_question' . $x),
-//                'quiz_id' => $quiz->id,
-//            ]);
-//            for ($a = $sum; $a <= $runs; $a++) {
-//                Answer::create([
-//                    'text_answer' => $request->input('text_answer' . $a),
-//                    'isTrue' => $request->input('isTrue' . $a) === 'on',
-//                    'question_id' => $que->id,
-//                ]);
-//            }
-//            $sum = $sum + 4;
-//            $runs = $runs + 4;
-//        }
-//
-//        return view('quizzes.create');
+
+            $quiz = Quiz::create([
+                'name' => Auth::user()->name,
+                'user_id' => Auth::user()->id,
+                'name' => $name_quiz,
+                'category_id' => $category_id,
+            ]);
+
+            $sum = 0;
+            for ($i = 0; $i < count($text_questions); $i++) {
+                $que = Question::create([
+                    'text_question' => $text_questions[$i],
+                    'quiz_id' => $quiz->id,
+                ]);
+
+                for ($j = $sum; $j < $sum + 4; $j++) {
+
+                    if ($trueIds[$i] - 1 == $j) {
+                        Answer::create([
+                            'text_answer' => $text_answers[$j],
+                            'question_id' => $que->id,
+                            'isTrue' => true,
+                        ]);
+                    } else {
+                        Answer::create([
+                            'text_answer' => $text_answers[$j],
+                            'question_id' => $que->id,
+                            'isTrue' => false,
+                        ]);
+                    }
+                }
+                $sum += 4;
+            }
+        }
+        return redirect()->back()->with('status', "Quiz successfully created!");
     }
 
-    public function showAnswers(Quiz $quiz)
-    {
-        if (Auth::user()->id === $quiz->user_id) {
-            return back()->with('message', 'You cant pass your quiz!');
-        }
-        $showAnswers = true;
-        $Questions = Question::all()->where('quiz_id', $quiz->id);
-        return view('quizzes.show', ['quiz' => $quiz, 'questions' => $Questions, 'showAnswers' => $showAnswers]);
-    }
 
     public function show(Quiz $quiz)
     {
         $this->authorize('view', $quiz);
         $Questions = Question::all()->where('quiz_id', $quiz->id);
-        $showAnswers = false;
-        return view('quizzes.show', ['quiz' => $quiz, 'questions' => $Questions, 'showAnswers' => $showAnswers]);
 
+        $myScore = 0;
+        $usercomptdQuiz = Auth::user()->competitedQuizzies()->where('quiz_id', $quiz->id)->first();
+        $usersComptdQuiz = $quiz->competitedUsers()->where('quiz_id', $quiz->id)->orderByDesc('point')->get();
+
+
+        if ($usercomptdQuiz != null)
+            $myScore = $usercomptdQuiz->pivot->point;
+//        for ($i = 0; $i < count($usersComptdQuiz); $i++) {
+//            dd($usersComptdQuiz[$i]->pivot->user_name);
+//        }
+        return view('quizzes.show', ['quiz' => $quiz, 'questions' => $Questions, 'myScore' => $myScore, 'comptdUsers' => $usersComptdQuiz]);
     }
 
-    public function checkAnswers(Request $request, Quiz $quiz)
+    public function compQuiz(Request $request, Quiz $quiz)
     {
 
         $Questions = Question::all()->where('quiz_id', $quiz->id);
         $answerIds = $request->input('answerId');
         $score = 0;
-        if (count($Questions) == 3 && count($answerIds) == 3) {
-            foreach ($Questions as $question) {
-                $answers = $question->answers;
-                foreach ($answers as $answer) {
-                    if ($answer->isTrue) {
-                        foreach ($answerIds as $id) {
-                            if ($id == $answer->id) {
-                                $score++;
-                            }
+
+        foreach ($Questions as $question) {
+            $answers = $question->answers;
+            foreach ($answers as $answer) {
+                if ($answer->isTrue) {
+                    foreach ($answerIds as $id) {
+                        if ($id == $answer->id) {
+                            $score++;
                         }
                     }
                 }
             }
-        }
-        Competition::create([
-            'user_id' => Auth::user()->id,
-            'quiz_id' => $quiz->id,
-            'name' => Auth::user()->name,
-            'point' => $score,
-        ]);
 
-        $result = "Your result " . $score . "/3!";
-        return redirect()->back()->withErrors($result);
+        }
+        $comptQuiz = Auth::user()->competitedQuizzies()->where('quiz_id', $quiz->id)->first();
+        if ($comptQuiz != null) {
+            Auth::user()->competitedQuizzies()->updateExistingPivot($quiz->id, ['point' => $score]);
+        } else {
+            Auth::user()->competitedQuizzies()->attach($quiz->id, ['user_name' => Auth::user()->name, 'point' => $score]);
+        }
+
+        $result = "Your result " . $score . '/' . count($Questions) . "!";
+        return redirect()->back()->with('status', $result);
     }
 
     public function deleteQuiz(Quiz $quiz)
@@ -144,5 +154,16 @@ class QuizController extends Controller
         redirect()->route('quizzes.index');
     }
 
+    public function deCompQuiz(Quiz $quiz)
+    {
+        if (Auth::check()) {
+            $comptQuiz = Auth::user()->competitedQuizzies()->where('quiz_id', $quiz->id)->first();
+            if ($comptQuiz != null) {
+                Auth::user()->competitedQuizzies()->detach($quiz->id);
+            }
+        }
+        $result = "Your result successfully  has been deleted!";
+        return redirect()->back()->with('status', $result);
+    }
 
 }

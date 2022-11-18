@@ -10,8 +10,7 @@ return new class extends Migration
     {
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
-            $table->string('quiz_score')->nullable();
-
+            $table->string('name');
             $table->foreignId('user_id')
                 ->constrained()
                 ->nullOnDelete();

@@ -39,5 +39,11 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+    public function competitedQuizzies()
+    {
+        return $this->belongsToMany(Quiz::class,'competition')
+            ->withPivot('point','user_name')
+            ->withTimestamps();
+    }
 
 }

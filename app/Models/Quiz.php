@@ -9,7 +9,7 @@ class Quiz extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['quiz_score', 'user_id', 'category_id'];
+    protected $fillable = ['name', 'user_id', 'category_id'];
 
     public function user()
     {
@@ -25,4 +25,13 @@ class Quiz extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+
+    public function competitedUsers()
+    {
+        return $this->belongsToMany(User::class,'competition')
+            ->withPivot('point','user_name')
+            ->withTimestamps();
+    }
+
 }

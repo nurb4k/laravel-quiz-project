@@ -18,13 +18,13 @@
                                 <div class="white_box_tittle  <?php echo $items[array_rand($items)]; ?>  ">
                                     <div class="main-title2 ">
                                         @guest
-                                            <h4 class="mb-2 nowrap text_white">{{$quiz->quiz_score}}'s quiz</h4>
+                                            <h4 class="mb-2 nowrap text_white">{{$quiz->name}}</h4>
                                         @else
 
                                             @if($quiz->user->id == Auth::user()->id)
                                                 <h4 style="color: white">YOUR QUIZ</h4>
                                             @else
-                                                <h4 class="mb-2 nowrap text_white">{{$quiz->quiz_score}}'s quiz</h4>
+                                                <h4 class="mb-2 nowrap text_white">{{$quiz->name}}'s quiz</h4>
                                             @endif
 
                                         @endguest
