@@ -4,29 +4,32 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 ">
-                @if(\Illuminate\Support\Facades\Auth::check())
-                    <a class="btn btn-success mb-3 mt-3" href="{{ route('quizzes.create') }}">Create
-                        new quiz</a>
-                @endif
+                {{--                @can('create',\Illuminate\Support\Facades\Auth::user())--}}
+                <a class="btn btn-success mb-3 mt-3" href="{{ route('quizzes.create') }}">Create
+                    new quiz</a>
+                {{--                @endcan--}}
                 <?php
-                    $items = Array('pink_bg', 'blue_bg', 'orange_bg', 'parpel_bg', 'green_bg');
+                $items = Array('pink_bg', 'blue_bg', 'orange_bg', 'parpel_bg', 'green_bg');
                 ?>
                 <div class="container-fluid">
                     <div class="col-lg-5">
                         @foreach($quizzes as $quiz)
                             <div class="card_box box_shadow position-relative mb_30 white_bg">
+
                                 <div class="white_box_tittle  <?php echo $items[array_rand($items)]; ?>  ">
                                     <div class="main-title2 ">
                                         @guest
-                                            <h4 class="mb-2 nowrap text_white">{{$quiz->name}}</h4>
+                                            <h5 class="mb-2 nowrap text_white">{{$quiz->name}}</h5>
+                                            <img src="{{asset($quiz->img)}}" width="300px" >
                                         @else
-
                                             @if($quiz->user->id == Auth::user()->id)
                                                 <h4 style="color: white">YOUR QUIZ</h4>
                                             @else
-                                                <h4 class="mb-2 nowrap text_white">{{$quiz->name}}'s quiz</h4>
-                                            @endif
+                                                <h5 class="mb-2 nowrap text_white">{{$quiz->name}}</h5><br>
+                                                deadline:
+                                                <p class="mb-2 nowrap text_white">{{$quiz->deadline}}</p>
 
+                                            @endif
                                         @endguest
                                     </div>
                                 </div>
@@ -37,7 +40,7 @@
                                         @if(Auth::user()->role->name == "admin")
                                             <form method="post" action="{{route('quizzes.delete',$quiz->id)}}">
                                                 @csrf
-                                                @method('DELETE')
+                                                {{--                                                @method('DELETE')--}}
                                                 <button type="submit" class="btn btn-danger">DELETE</button>
                                             </form>
 

@@ -4,237 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8351484a-c6c9-410a-a2e9-410e33a1cd54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3/storage_v2/_src_/database/db_16-10.xlMAeQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3/storage_v2/_src_/database/db_16-10.xlMAeQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3/storage_v2/_src_/database/db_16-10.xlMAeQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3/storage_v2/_src_/database/db_16-10.xlMAeQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Counter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_11_16_151501_create_competition_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/counter.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/.all-contributorsrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/.github/FUNDING.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/.github/ISSUE_TEMPLATE/bug_report.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/.github/ISSUE_TEMPLATE/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/.github/SECURITY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/.github/workflows/test.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/config/livewire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/dist/livewire.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/dist/livewire.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/dist/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/jest.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/DirectiveManager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/HookManager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/Message.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/MessageBag.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/MessageBus.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/PrefetchMessage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/Store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/action/deferred-model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/action/event.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/action/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/action/method.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/action/model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/DirtyStates.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/DisableForms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/FileDownloads.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/FileUploads.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/LaravelEcho.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/LoadingStates.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/OfflineStates.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/Polling.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/PrefetchManager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/SupportAlpine.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/SupportStacks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/SyncBrowserHistory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/UploadManager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/component/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/connection/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/dom/dom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/dom/morphdom/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/dom/morphdom/morphAttrs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/dom/morphdom/morphdom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/dom/morphdom/specialElHandlers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/dom/morphdom/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/dom/polyfills/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/dom/polyfills/modules/es.element.closest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/dom/polyfills/modules/es.element.get-attribute-names.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/dom/polyfills/modules/es.element.matches.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/node_initializer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/util/debounce.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/util/dispatch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/util/getCsrfToken.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/util/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/util/walk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/js/util/wire-directives.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/rollup.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/squishy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Castable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/ComponentParser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/ComponentParserFromExistingComponent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/CopyCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/CpCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/DeleteCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/DiscoverCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/FileManipulationCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/MakeCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/MakeLivewireCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/MoveCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/MvCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/PublishCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/RmCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/S3CleanupCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/StubParser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/StubsCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/TouchCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/livewire.inline.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/livewire.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/livewire.test.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/livewire.view.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Commands/the-tao.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/CompilerEngineForIgnition.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Component.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ComponentChecksumManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ComponentConcerns/HandlesActions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ComponentConcerns/InteractsWithProperties.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ComponentConcerns/PerformsRedirects.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ComponentConcerns/ReceivesEvents.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ComponentConcerns/RendersLivewireComponents.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ComponentConcerns/TracksRenderedChildren.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ComponentConcerns/ValidatesInput.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Connection/ConnectionHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Controllers/CanPretendToBeAFile.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Controllers/FilePreviewHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Controllers/FileUploadHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Controllers/HttpConnectionHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Controllers/LivewireJavaScriptAssets.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/CreateBladeView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/DisableBrowserCache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Event.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/BypassViewHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/CannotBindToModelDataWithoutValidationRuleException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/CannotUseReservedLivewireComponentProperties.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/ComponentAttributeMissingOnDynamicComponentException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/ComponentNotFoundException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/CorruptComponentPayloadException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/DirectlyCallingLifecycleHooksNotAllowedException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/LivewirePageExpiredBecauseNewDeploymentHasSignificantEnoughChanges.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/MethodNotFoundException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/MissingFileUploadsTraitException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/MissingRulesException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/NonPublicComponentMethodCall.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/PropertyNotFoundException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/PublicPropertyNotFoundException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/PublicPropertyTypeNotAllowedException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/RootTagMissingFromViewException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Exceptions/S3DoesntSupportMultipleFileUploads.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/OptimizeRenderedDom.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/Placeholder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportActionReturns.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportBootMethod.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportBrowserHistory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportChildren.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportCollections.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportComponentTraits.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportDateTimes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportEvents.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportFileDownloads.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportFileUploads.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportLocales.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportPostDeploymentInvalidation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportRedirects.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportRootElementTracking.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportStacks.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Features/SupportValidation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/FileUploadConfiguration.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/GenerateSignedUploadUrl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/AddAttributesToRootTagOfHtml.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/CallHydrationHooks.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/CallPropertyHydrationHooks.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/HashDataPropertiesForDirtyDetection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/HydratePublicProperties.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/HydrationMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/NormalizeComponentPropertiesForJavaScript.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/NormalizeDataForJavaScript.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/NormalizeServerMemoSansDataForJavaScript.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/PerformActionCalls.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/PerformDataBindingUpdates.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/PerformEventEmissions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/RenderView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/HydrationMiddleware/SecureHydrationWithChecksum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ImplicitRouteBinding.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ImplicitlyBoundMethod.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/LifecycleManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Livewire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/LivewireBladeDirectives.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/LivewireComponentsFinder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/LivewireManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/LivewireServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/LivewireTagCompiler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/LivewireViewCompilerEngine.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Macros/DuskBrowserMacros.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Macros/ViewMacros.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Macros/livewire-view-component.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Macros/livewire-view-extends.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/ObjectPrybar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Redirector.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Request.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Response.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/TemporaryUploadedFile.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Testing/Concerns/HasFunLittleUtilities.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Testing/Concerns/MakesAssertions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Testing/Concerns/MakesCallsToComponent.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Testing/MakesHttpRequestsWrapper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Testing/TestableLivewire.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/WireDirective.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/Wireable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/WithFileUploads.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/WithPagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/helpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/views/mount-component.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/views/pagination/bootstrap.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/views/pagination/simple-bootstrap.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/views/pagination/simple-tailwind.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/src/views/pagination/tailwind.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/stubs/DuskComponent.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/stubs/DuskTest.stub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/livewire/livewire/stubs/DuskView.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/quizProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/quizProject.iml" afterDir="false" />
+    <list default="true" id="8351484a-c6c9-410a-a2e9-410e33a1cd54" name="Changes" comment="Added: competition with relation many to many(quiz-user) ;">
+      <change afterPath="$PROJECT_DIR$/lang/en/messages.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lang/kz/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lang/kz/messages.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lang/kz/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompetitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompetitionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Competition.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Quiz.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Quiz.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_10_16_181540_create_quizzes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_10_16_181540_create_quizzes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_11_05_174931_create_competitions_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/QuizPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/QuizPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/UserPolicy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/quizzes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizzes/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/quizzes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizzes/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/quizzes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizzes/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,7 +174,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Haier/OneDrive/Рабочий стол/laravel/quizProject/App304&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Haier/OneDrive/Рабочий стол/laravel/quizProject/App304/lang/kz&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -392,6 +189,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Haier\OneDrive\Рабочий стол\laravel\quizProject\App304\lang\kz" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -421,7 +223,30 @@
       <workItem from="1668755767791" duration="2838000" />
       <workItem from="1668762228831" duration="28000" />
       <workItem from="1668783968203" duration="13353000" />
+      <workItem from="1668800894626" duration="283000" />
+      <workItem from="1668831616279" duration="877000" />
+      <workItem from="1668833193661" duration="1554000" />
+      <workItem from="1668834893526" duration="186000" />
+      <workItem from="1668842286195" duration="1019000" />
+      <workItem from="1669142322191" duration="126000" />
+      <workItem from="1669224287538" duration="100000" />
+      <workItem from="1669274911232" duration="51000" />
+      <workItem from="1669281580718" duration="71000" />
+      <workItem from="1669397884001" duration="38000" />
+      <workItem from="1670005106127" duration="1197000" />
+      <workItem from="1670101942845" duration="624000" />
+      <workItem from="1670150162163" duration="353000" />
+      <workItem from="1670599052569" duration="23114000" />
+      <workItem from="1670624936440" duration="8000" />
     </task>
+    <task id="LOCAL-00001" summary="Added: competition with relation many to many(quiz-user) ;">
+      <created>1668801081434</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668801081434</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,5 +262,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added: competition with relation many to many(quiz-user) ;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added: competition with relation many to many(quiz-user) ;" />
   </component>
 </project>

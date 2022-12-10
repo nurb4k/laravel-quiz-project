@@ -31,7 +31,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <li class="nav-item dropdown">
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                    </div>
+
+                </li>
                 <ul class="navbar-nav ms-auto">
                     @guest
                         @if (Route::has('login.form'))
@@ -65,7 +74,10 @@
                         </li>
 
                     @endguest
+
+
                 </ul>
+
             </div>
         </div>
     </nav>
@@ -79,6 +91,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
+
                 @yield('content')
                 @if ($errors->any())
                     <div class="alert alert-danger">

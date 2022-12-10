@@ -4321,7 +4321,7 @@ sequence|table|28807|28809|1
     </table>
     <table id="283" parent="264" name="quizzes">
       <ObjectId>28735</ObjectId>
-      <StateNumber>3762</StateNumber>
+      <StateNumber>4621</StateNumber>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="284" parent="264" name="roles">
@@ -4913,7 +4913,14 @@ tokenable_id</ColNames>
       <StateNumber>3762</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="363" parent="283" name="quizzes_user_id_foreign">
+    <column id="363" parent="283" name="img">
+      <DataType>varchar(255)|0s</DataType>
+      <DefaultExpression>&apos;noimg&apos;::character varying</DefaultExpression>
+      <Position>8</Position>
+      <StateNumber>4621</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <foreign-key id="364" parent="283" name="quizzes_user_id_foreign">
       <ColNames>user_id</ColNames>
       <ObjectId>28741</ObjectId>
       <OnDelete>set-null</OnDelete>
@@ -4925,7 +4932,7 @@ tokenable_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="364" parent="283" name="quizzes_category_id_foreign">
+    <foreign-key id="365" parent="283" name="quizzes_category_id_foreign">
       <ColNames>category_id</ColNames>
       <ObjectId>28802</ObjectId>
       <OnDelete>restrict</OnDelete>
@@ -4937,7 +4944,7 @@ tokenable_id</ColNames>
       <RefTableName>categories</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="365" parent="283" name="quizzes_pkey">
+    <index id="366" parent="283" name="quizzes_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>28739</ObjectId>
@@ -4946,7 +4953,7 @@ tokenable_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="366" parent="283" name="quizzes_pkey">
+    <key id="367" parent="283" name="quizzes_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>28740</ObjectId>
@@ -4954,7 +4961,7 @@ tokenable_id</ColNames>
       <StateNumber>3748</StateNumber>
       <UnderlyingIndexId>28739</UnderlyingIndexId>
     </key>
-    <column id="367" parent="284" name="id">
+    <column id="368" parent="284" name="id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>nextval(&apos;roles_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4962,26 +4969,26 @@ tokenable_id</ColNames>
       <StateNumber>3754</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="368" parent="284" name="name">
+    <column id="369" parent="284" name="name">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3754</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="369" parent="284" name="created_at">
+    <column id="370" parent="284" name="created_at">
       <DataType>timestamp(0)|0s</DataType>
       <Position>3</Position>
       <StateNumber>3754</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="370" parent="284" name="updated_at">
+    <column id="371" parent="284" name="updated_at">
       <DataType>timestamp(0)|0s</DataType>
       <Position>4</Position>
       <StateNumber>3754</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="371" parent="284" name="roles_pkey">
+    <index id="372" parent="284" name="roles_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>28784</ObjectId>
@@ -4990,7 +4997,7 @@ tokenable_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="372" parent="284" name="roles_pkey">
+    <key id="373" parent="284" name="roles_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>28785</ObjectId>
@@ -4998,7 +5005,7 @@ tokenable_id</ColNames>
       <StateNumber>3754</StateNumber>
       <UnderlyingIndexId>28784</UnderlyingIndexId>
     </key>
-    <column id="373" parent="285" name="id">
+    <column id="374" parent="285" name="id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5006,58 +5013,58 @@ tokenable_id</ColNames>
       <StateNumber>3740</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="374" parent="285" name="name">
+    <column id="375" parent="285" name="name">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>3740</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="375" parent="285" name="id_user_answerQuestionOn">
+    <column id="376" parent="285" name="id_user_answerQuestionOn">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>3740</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="376" parent="285" name="email">
+    <column id="377" parent="285" name="email">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>3740</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="377" parent="285" name="email_verified_at">
+    <column id="378" parent="285" name="email_verified_at">
       <DataType>timestamp(0)|0s</DataType>
       <Position>5</Position>
       <StateNumber>3740</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="378" parent="285" name="password">
+    <column id="379" parent="285" name="password">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>3740</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="379" parent="285" name="remember_token">
+    <column id="380" parent="285" name="remember_token">
       <DataType>varchar(100)|0s</DataType>
       <Position>7</Position>
       <StateNumber>3740</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="380" parent="285" name="created_at">
+    <column id="381" parent="285" name="created_at">
       <DataType>timestamp(0)|0s</DataType>
       <Position>8</Position>
       <StateNumber>3740</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="381" parent="285" name="updated_at">
+    <column id="382" parent="285" name="updated_at">
       <DataType>timestamp(0)|0s</DataType>
       <Position>9</Position>
       <StateNumber>3740</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="382" parent="285" name="role_id">
+    <column id="383" parent="285" name="role_id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>&apos;1&apos;::bigint</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5065,7 +5072,7 @@ tokenable_id</ColNames>
       <StateNumber>3756</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="383" parent="285" name="is_active">
+    <column id="384" parent="285" name="is_active">
       <DataType>boolean|0s</DataType>
       <DefaultExpression>true</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5073,7 +5080,7 @@ tokenable_id</ColNames>
       <StateNumber>3758</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <foreign-key id="384" parent="285" name="users_role_id_foreign">
+    <foreign-key id="385" parent="285" name="users_role_id_foreign">
       <ColNames>role_id</ColNames>
       <ObjectId>28787</ObjectId>
       <OnDelete>restrict</OnDelete>
@@ -5085,7 +5092,7 @@ tokenable_id</ColNames>
       <RefTableName>roles</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="385" parent="285" name="users_pkey">
+    <index id="386" parent="285" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>28694</ObjectId>
@@ -5094,7 +5101,7 @@ tokenable_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="386" parent="285" name="users_email_unique">
+    <index id="387" parent="285" name="users_email_unique">
       <ColNames>email</ColNames>
       <ObjectId>28696</ObjectId>
       <StateNumber>3740</StateNumber>
@@ -5104,7 +5111,7 @@ tokenable_id</ColNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="387" parent="285" name="users_pkey">
+    <key id="388" parent="285" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>28695</ObjectId>
@@ -5112,7 +5119,7 @@ tokenable_id</ColNames>
       <StateNumber>3740</StateNumber>
       <UnderlyingIndexId>28694</UnderlyingIndexId>
     </key>
-    <key id="388" parent="285" name="users_email_unique">
+    <key id="389" parent="285" name="users_email_unique">
       <ColNames>email</ColNames>
       <ObjectId>28697</ObjectId>
       <StateNumber>3740</StateNumber>

@@ -7,11 +7,14 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LanguageController;
 
 
 Route::get('/', function () {
     return redirect()->route('quizzes.index', QuizController::class);
 });
+
+Route::get('lang/{lang}',[LanguageController::class,'switch'])->name('switch.lang');
 Route::middleware('auth')->group(function () {
     Route::resource('/quizzes', QuizController::class)->except('index');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

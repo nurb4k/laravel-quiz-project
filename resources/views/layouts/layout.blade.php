@@ -32,12 +32,13 @@
 
 <nav class="sidebar">
     <div class="logo d-flex justify-content-between">
-        <a class="large_logo" href="#"><h2>NURBEK</h2></a>
-        <a class="small_logo" href="#"><h5>NURBEK</h5></a>
+        <a class="large_logo" href="#"><h2>QUIZ</h2></a>
+        <a class="small_logo" href="#"><h5>Quiz</h5></a>
         <div class="sidebar_close_icon d-lg-none">
             <i class="ti-close"></i>
         </div>
     </div>
+
     <ul id="sidebar_menu">
         @guest
             @if (Route::has('login.form'))
@@ -47,7 +48,7 @@
                             <img src="img/menu-icon/dashboard.svg" alt="">
                         </div>
                         <div class="nav_title">
-                            <span>{{ __('Login') }}</span>
+                            <span>{{ __('messages.login') }}</span>
                         </div>
                     </a>
                 </li>
@@ -61,7 +62,7 @@
                             <img src="img/menu-icon/dashboard.svg" alt="">
                         </div>
                         <div class="nav_title">
-                            <span>{{ __('Register') }}</span>
+                            <span>{{ __('messages.register') }}</span>
                         </div>
                     </a>
                 </li>
@@ -73,10 +74,16 @@
                     <img src="img/menu-icon/dashboard.svg" alt="">
                 </div>
                 <div class="nav_title">
-                    <span>MAIN</span>
+                    <span> {{ __('messages.main') }}</span>
                 </div>
+                @foreach(config('app.languages') as $ln  => $lang)
+                    <a href="{{route('switch.lang',$ln)}}">
+                        {{$lang}}
+                    </a>
+                @endforeach
             </a>
         </li>
+
 
 
     </ul>
@@ -188,7 +195,7 @@
                             </div>
                         @else
                             <div class="profile_info">
-                                <img src="img/client_img.png" alt="#">
+                                <img src="  {{asset('img/client_img.png')}}" alt="#">
                                 <div class="profile_info_iner">
                                     <div class="profile_author_name">
                                         <h5>{{ Auth::user()->name }}</h5>
@@ -199,7 +206,7 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('messages.logout') }}
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                               class="d-none">
@@ -236,7 +243,9 @@
                             </ul>
                         </div>
                     @endif
-                    @yield('content')
+                        <h1>{{app()->getLocale() }}</h1>
+
+                        @yield('content')
                 </div>
             </div>
         </div>

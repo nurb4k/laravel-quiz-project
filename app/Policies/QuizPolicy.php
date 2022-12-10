@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\Quiz;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class QuizPolicy
@@ -23,12 +24,19 @@ class QuizPolicy
 
     public function create(User $user)
     {
-        return ($user->role == "moderator");
     }
 
     public function update(User $user, Quiz $quiz)
     {
-        //
+
+    }
+
+    public function competite(User $user, Quiz $quiz)
+    {
+        $nowTime = Carbon::now()->addHours(6);
+        $quizDeadline = $quiz->deadline;
+        return $nowTime->lte($quizDeadline);
+
     }
 
     public function delete(User $user, Quiz $quiz)

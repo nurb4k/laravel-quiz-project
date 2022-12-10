@@ -26,8 +26,9 @@ class QuizController extends Controller
 
     public function create(User $user)
     {
-        $categories =  Category::all();
-        return view('quizzes.create',['categories'=>$categories]);
+//        $this->authorize('create');
+        $categories = Category::all();
+        return view('quizzes.create', ['categories' => $categories]);
     }
 
 
@@ -39,7 +40,25 @@ class QuizController extends Controller
         $name_quiz = $request->input('name_quiz');
         $category_id = $request->input('category_id');
         $trueIds = $request->input('isTrue');
-        if ($text_questions != null && $text_answers != null && $trueIds != null ) {
+
+        $deadline = $request->input('deadline');
+        $deadline = str_replace('T', ' ', $deadline);
+//        dd($deadline.':00');
+
+        $validated = $request->validate([
+            'text_question' => 'required|max:255',
+            'text_answer' => 'required|max:255',
+            'name_quiz' => 'required|max:255',
+            'deadline' => 'required',
+            'category_id' => 'required|exists:categories,id',
+            'img' => 'mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,max_width=2000,max_height=2000'
+        ]);
+
+        $fileName = time() . $request->file('img')->getClientOriginalName();
+        $image_path = $request->file('img')->storeAs('quizzes', $fileName, 'public');
+        $validated['img'] = '/storage/' . $image_path;
+
+        if ($text_questions != null && $text_answers != null && $trueIds != null) {
             $count = 4;
             for ($i = 1; $i < count($trueIds); $i++) {
                 if (count($trueIds) == 1) {
@@ -50,12 +69,13 @@ class QuizController extends Controller
                 $count += 4;
             }
 
-
             $quiz = Quiz::create([
                 'name' => Auth::user()->name,
                 'user_id' => Auth::user()->id,
-                'name' => $name_quiz,
-                'category_id' => $category_id,
+                'name' => $validated['name_quiz'],
+                'category_id' => $validated['category_id'],
+                'img' => $validated['img'],
+                'deadline' => $deadline
             ]);
 
             $sum = 0;
