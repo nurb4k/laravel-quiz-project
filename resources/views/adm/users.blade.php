@@ -22,6 +22,7 @@
             <th scope="col">Email</th>
             <th scope="col">Role</th>
             <th scope="col">is active</th>
+            <th scope="col">Details</th>
 
         </tr>
         </thead>
@@ -29,7 +30,11 @@
         @for($i=0;$i<count($users);$i++)
             <tr>
                 <th scope="row">{{$i+1}}</th>
-                <td>{{$users[$i]->name}}</td>
+                <td>
+
+                    {{$users[$i]->name}}
+
+                </td>
                 <td>{{$users[$i]->email}}</td>
                 <td>
                     <form action="{{route('adm.users.edit',$users[$i]->id)}}">
@@ -45,27 +50,32 @@
                 </td>
                 <td>
 
-                        @if($users[$i]->id != \Illuminate\Support\Facades\Auth::user()->id)
-                            <form action="
+                    @if($users[$i]->id != \Illuminate\Support\Facades\Auth::user()->id)
+                        <form action="
                             @if($users[$i]->is_active)
                                 {{route('adm.users.ban',$users[$i]->id)}}
                             @else
                                 {{route('adm.users.unban',$users[$i]->id)}}
                             @endif
                             " method="post">
-                                @csrf
-                                @method('PUT')
-                                <button class="btn btn-danger" type="submit">
+                            @csrf
+                            @method('PUT')
+                            <button class="btn btn-danger" type="submit">
 
-                                    @if($users[$i]->is_active )
-                                        BAN
-                                    @else
-                                        UNBAN
-                                    @endif
-                                </button>
-                            </form>
-                        @endif
+                                @if($users[$i]->is_active )
+                                    BAN
+                                @else
+                                    UNBAN
+                                @endif
+                            </button>
+                        </form>
+                    @endif
 
+                </td>
+                <td>
+                    @if($users[$i]->id != \Illuminate\Support\Facades\Auth::user()->id)
+                        <a class="btn btn-primary" href="{{route('adm.users.details',$users[$i])}}">details</a>
+                    @endif
                 </td>
 
             </tr>

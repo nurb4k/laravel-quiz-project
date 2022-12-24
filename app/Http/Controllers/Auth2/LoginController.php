@@ -25,10 +25,13 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($validated)) {
-            if (Auth::user()->role->name == "admin")
-                return redirect()->intended('/adm/users');
+            $result = (__('messages.welcome'));
+            $result = $result.Auth::user()->name;
 
-            return redirect()->intended('/quizzes');
+            if (Auth::user()->role->name == "admin")
+                return redirect()->intended('/adm/users')->with('status', $result);
+
+            return redirect()->intended('/quizzes')->with('status', $result);
         }
         return back()->withErrors('Incorrect email or password');
 

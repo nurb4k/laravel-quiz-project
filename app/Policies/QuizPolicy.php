@@ -11,26 +11,6 @@ class QuizPolicy
 {
     use HandlesAuthorization;
 
-    public function viewAny(User $user)
-    {
-        //
-    }
-
-
-    public function view(User $user, Quiz $quiz)
-    {
-        return ($user->id != $quiz->user_id) || ($user->role = !"user");
-    }
-
-    public function create(User $user)
-    {
-    }
-
-    public function update(User $user, Quiz $quiz)
-    {
-
-    }
-
     public function competite(User $user, Quiz $quiz)
     {
         $nowTime = Carbon::now()->addHours(6);
@@ -38,19 +18,26 @@ class QuizPolicy
         return $nowTime->lte($quizDeadline);
 
     }
+    public function view(User $user,Quiz $quiz){
+       return $quiz->user_id != $user->id;
+    }
+
+    public function create(User $user)
+    {
+        return $user->role->name == 'moderator';
+//            dd($user->role->name == 'moderator');
+    }
+
+    public function update(User $user, Quiz $quiz)
+    {
+        return $user->role->name == 'moderator';
+    }
+
 
     public function delete(User $user, Quiz $quiz)
     {
         return ($user->id == $quiz->user_id) || ($user->role = !"user");
     }
 
-    public function restore(User $user, Quiz $quiz)
-    {
-        //
-    }
 
-    public function forceDelete(User $user, Quiz $quiz)
-    {
-        //
-    }
 }

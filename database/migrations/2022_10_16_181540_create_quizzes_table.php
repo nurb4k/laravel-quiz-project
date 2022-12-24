@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->default("no data");
             $table->foreignId('user_id')
                 ->constrained()
                 ->nullOnDelete();

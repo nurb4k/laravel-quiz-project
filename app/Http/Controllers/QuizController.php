@@ -40,10 +40,8 @@ class QuizController extends Controller
         $name_quiz = $request->input('name_quiz');
         $category_id = $request->input('category_id');
         $trueIds = $request->input('isTrue');
-
         $deadline = $request->input('deadline');
         $deadline = str_replace('T', ' ', $deadline);
-//        dd($deadline.':00');
 
         $validated = $request->validate([
             'text_question' => 'required|max:255',
@@ -70,7 +68,6 @@ class QuizController extends Controller
             }
 
             $quiz = Quiz::create([
-                'name' => Auth::user()->name,
                 'user_id' => Auth::user()->id,
                 'name' => $validated['name_quiz'],
                 'category_id' => $validated['category_id'],
@@ -104,31 +101,31 @@ class QuizController extends Controller
                 $sum += 4;
             }
         }
-        return redirect()->back()->with('status', "Quiz successfully created!");
+        return redirect()->back()->with('status', (__('messages.created')));
     }
 
 
     public function show(Quiz $quiz)
     {
         $this->authorize('view', $quiz);
+
+
         $Questions = Question::all()->where('quiz_id', $quiz->id);
 
         $myScore = 0;
         $usercomptdQuiz = Auth::user()->competitedQuizzies()->where('quiz_id', $quiz->id)->first();
+
         $usersComptdQuiz = $quiz->competitedUsers()->where('quiz_id', $quiz->id)->orderByDesc('point')->get();
 
 
         if ($usercomptdQuiz != null)
             $myScore = $usercomptdQuiz->pivot->point;
-//        for ($i = 0; $i < count($usersComptdQuiz); $i++) {
-//            dd($usersComptdQuiz[$i]->pivot->user_name);
-//        }
         return view('quizzes.show', ['quiz' => $quiz, 'questions' => $Questions, 'myScore' => $myScore, 'comptdUsers' => $usersComptdQuiz]);
     }
 
     public function compQuiz(Request $request, Quiz $quiz)
     {
-
+        $this->authorize('competite',$quiz);
         $Questions = Question::all()->where('quiz_id', $quiz->id);
         $answerIds = $request->input('answerId');
         $score = 0;
@@ -153,7 +150,8 @@ class QuizController extends Controller
             Auth::user()->competitedQuizzies()->attach($quiz->id, ['user_name' => Auth::user()->name, 'point' => $score]);
         }
 
-        $result = "Your result " . $score . '/' . count($Questions) . "!";
+        $res = (__('messages.score'));
+        $result = $res . $score . '/' . count($Questions) . "!";
         return redirect()->back()->with('status', $result);
     }
 
@@ -182,8 +180,8 @@ class QuizController extends Controller
                 Auth::user()->competitedQuizzies()->detach($quiz->id);
             }
         }
-        $result = "Your result successfully  has been deleted!";
-        return redirect()->back()->with('status', $result);
+
+        return redirect()->back()->with('status', 'Result '.(__('messages.deleted')));
     }
 
 }

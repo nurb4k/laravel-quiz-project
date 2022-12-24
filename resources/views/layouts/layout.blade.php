@@ -4,7 +4,7 @@
 
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>Analytic</title>
+    <title> @yield('title')  </title>
     <link rel="icon" href="{{asset('img/mini_logo.png')}}" type="image/png">
     <link rel="stylesheet" href="{{asset('css/bootstrap1.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('vendors/themefy_icon/themify-icons.css')}}"/>
@@ -30,7 +30,7 @@
 <body class="crm_body_bg">
 
 
-<nav class="sidebar">
+<nav class="sidebar ">
     <div class="logo d-flex justify-content-between">
         <a class="large_logo" href="#"><h2>QUIZ</h2></a>
         <a class="small_logo" href="#"><h5>Quiz</h5></a>
@@ -76,14 +76,65 @@
                 <div class="nav_title">
                     <span> {{ __('messages.main') }}</span>
                 </div>
+
+
                 @foreach(config('app.languages') as $ln  => $lang)
-                    <a href="{{route('switch.lang',$ln)}}">
+                    <a class="nav_title" href="{{route('switch.lang',$ln)}}">
                         {{$lang}}
                     </a>
                 @endforeach
             </a>
         </li>
+        @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->role_id == 3)
 
+            {{--            <li>--}}
+            {{--                <a href="{{ route('adm.quizzes.index') }}" aria-expanded="false">--}}
+            {{--                    <div class="nav_icon_small">--}}
+            {{--                        <img src="img/menu-icon/dashboard.svg" alt="">--}}
+            {{--                    </div>--}}
+            {{--                    <div class="nav_title">--}}
+            {{--                        <span>Deadline expired quizzes</span>--}}
+            {{--                    </div>--}}
+            {{--                </a>--}}
+            {{--            </li>--}}
+
+            <li>
+                <a href="{{ route('adm.users.index') }}" aria-expanded="false">
+                    <div class="nav_icon_small">
+                        <img src="img/menu-icon/dashboard.svg" alt="">
+                    </div>
+                    <div class="nav_title">
+                        <span>manage users</span>
+                    </div>
+                </a>
+            </li>
+        @endif
+        @can('moder',\Illuminate\Support\Facades\Auth::user())
+
+            {{--            @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->role_id == 2)--}}
+            <li>
+                <a href="{{ route('mdr.quizzes.index') }}" aria-expanded="false">
+                    <div class="nav_icon_small">
+                        <img src="img/menu-icon/dashboard.svg" alt="">
+                    </div>
+                    <div class="nav_title">
+                        <span>{{__('messages.manageQuiz')}}</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('mdr.categories.index') }}" aria-expanded="false">
+                    <div class="nav_icon_small">
+                        <img src="img/menu-icon/dashboard.svg" alt="">
+                    </div>
+                    <div class="nav_title">
+                        <span>{{__('messages.manageCate')}}</span>
+                    </div>
+                </a>
+            </li>
+
+            {{--            @endif--}}
+        @endcan
 
 
     </ul>
@@ -195,15 +246,27 @@
                             </div>
                         @else
                             <div class="profile_info">
-                                <img src="  {{asset('img/client_img.png')}}" alt="#">
+                                @if(\Illuminate\Support\Facades\Auth::user()->img == 'noimg')
+                                    <img
+                                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
+                                        width="34px" alt="#">
+                                @else
+                                    <img width="80px" src="{{asset(\Illuminate\Support\Facades\Auth::user()->img)}}"
+                                         alt="#">
+                                @endif
+
                                 <div class="profile_info_iner">
                                     <div class="profile_author_name">
                                         <h5>{{ Auth::user()->name }}</h5>
                                     </div>
+
                                     <div class="profile_info_details">
-                                        <a href="#">My Profile </a>
-                                        <a href="#">Settings</a>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        <a href="{{route('profile.index')}}">My Profile </a>
+                                        @if(\Illuminate\Support\Facades\Auth::user()->role_id == 3)
+                                            <a href="{{route('adm.users.index')}}">Admin panel</a>
+                                        @endif
+
+                                        <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             {{ __('messages.logout') }}
@@ -243,9 +306,9 @@
                             </ul>
                         </div>
                     @endif
-                        <h1>{{app()->getLocale() }}</h1>
+                    {{--                        <h1>{{app()->getLocale() }}</h1>--}}
 
-                        @yield('content')
+                    @yield('content')
                 </div>
             </div>
         </div>
@@ -388,7 +451,8 @@
 
 <script src="js/popper1.min.js"></script>
 
-<script src="js/bootstrap1.min.js"></script>
+<script  src="js/bootstrap1.min.js"></script>
+<script src="js/bootstrap.js"></script>
 
 <script src="js/metisMenu.js"></script>
 

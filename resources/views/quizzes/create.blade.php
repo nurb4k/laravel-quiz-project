@@ -22,7 +22,7 @@
         <br>
 
         <select name="category_id" class="form-select form-select-sm">
-            <option selected>Open this select menu</option>
+            <option selected>select category</option>
             categories
             @if($categories!=null)
                 @foreach($categories as $cate)
@@ -30,15 +30,23 @@
                 @endforeach
             @endif
         </select>
+        <label class="label" for="">Image for quiz (less than 2 mb)</label>
+        <input type="file" class="form-control @error('img') is-invalid @enderror " name="img">
+        <label>Deadline date:</label>
+        <input type="datetime-local" name="deadline" class="form-control @error('deadline') is-invalid @enderror "
+               placeholder="dd-mm-yyyy"
+        >
         <br>
         <div id="content">
 
         </div>
-        <input type="button" class="btn btn-success" value="add new question" style="margin-bottom: 15px;"
+
+
+        <input type="button" class="btn btn-success" value="{{__('messages.addQues')}}" style="margin-bottom: 15px;"
                onclick="addRow()">
 
         <div>
-            <button class="btn btn-success my-3f" style="margin-top: 15px;" type="submit">Publish</button>
+            <button class="btn btn-success my-3f" style="margin-top: 15px;" type="submit">{{__('messages.publish')}}</button>
         </div>
 
     </form>
@@ -51,11 +59,8 @@
            <hr>
                 <input type="text" class="form-control " name="text_question[]"
                        placeholder="Enter question">
-                <input type="file" class="form-control @error('img') is-invalid @enderror " name="img" >
-                <input type="datetime-local"  name="deadline" class="form-control @error('deadline') is-invalid @enderror "
-                    placeholder="dd-mm-yyyy"
-                   >
-                <hr>
+                <br>
+
                     <div class="d-flex">
                         <div class="input-group mb-3">
                           <div class="input-group-prepend">
