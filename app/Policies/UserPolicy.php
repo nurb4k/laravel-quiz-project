@@ -9,7 +9,6 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
-
     public function view(User $user, User $model)
     {
         return $user->role->name == 'admin';

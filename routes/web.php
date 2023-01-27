@@ -20,14 +20,14 @@ Route::get('lang/{lang}', [LanguageController::class, 'switch'])->name('switch.l
 
 Route::middleware('auth')->group(function () {
     Route::resource('/quizzes', QuizController::class)->except('index');
-    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-    Route::post('/quizzes/check/{quiz}', [QuizController::class, 'checkAnswers'])->name('quizzes.checkAnswers');
-    Route::post('/quizzes/{quiz}/delete', [QuizController::class, 'deleteQuiz'])->name('quizzes.delete');
+
+    Route::post('/quizzes/{quiz}/delete', [QuizController::class, 'destroy'])->name('quizzes.delete');
     Route::post('/quizzes/{quiz}/competition', [QuizController::class, 'compQuiz'])->name('compt.quiz');
     Route::post('/quizzes/{quiz}/competition/reset', [QuizController::class, 'deCompQuiz'])->name('compt.quiz.delete');
 
     Route::get('/competition', [CompetitionController::class, 'index'])->name('competition.index');
 
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');

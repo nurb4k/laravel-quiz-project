@@ -4,46 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8351484a-c6c9-410a-a2e9-410e33a1cd54" name="Changes" comment="Added: storage and languages">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Policies/CategoryPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Policies/UserPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_12_16_135223_add_image_to_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/adm/userDetails.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mdr/categories/categories.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mdr/quiz.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mdr/quizzes.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/quizzes/competition.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/profile.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/profileEdit.blade.php" afterDir="false" />
+    <list default="true" id="8351484a-c6c9-410a-a2e9-410e33a1cd54" name="Changes" comment="Added: added user profile and image for them. Also, some management system for admin and moderators!">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Quiz/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3/storage_v2/_src_/database/db_16-10.xlMAeQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2fa94c01-19f0-45d1-b709-38a3c8bc99d3/storage_v2/_src_/database/db_16-10.xlMAeQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Adm/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Adm/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth2/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth2/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuizController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Policies/QuizPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/QuizPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_10_16_181540_create_quizzes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_10_16_181540_create_quizzes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_11_16_151501_create_competition_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_11_16_151501_create_competition_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lang/en/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/lang/en/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lang/kz/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/lang/kz/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adm/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adm/users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/UserPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/UserPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/editComment.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/show.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/quizzes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizzes/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mdr/quizzes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mdr/quizzes.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/quizzes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizzes/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/quizzes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quizzes/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,6 +245,23 @@
       <workItem from="1671583412715" duration="2837000" />
       <workItem from="1671593238832" duration="453000" />
       <workItem from="1671593947042" duration="3444000" />
+      <workItem from="1671866963245" duration="1031000" />
+      <workItem from="1672343492710" duration="1404000" />
+      <workItem from="1674110551046" duration="111000" />
+      <workItem from="1674111544752" duration="3744000" />
+      <workItem from="1674124848377" duration="629000" />
+      <workItem from="1674134683013" duration="41000" />
+      <workItem from="1674135189937" duration="283000" />
+      <workItem from="1674582747827" duration="197000" />
+      <workItem from="1674583794360" duration="2709000" />
+      <workItem from="1674653818686" duration="16000" />
+      <workItem from="1674653844166" duration="42000" />
+      <workItem from="1674654278310" duration="177000" />
+      <workItem from="1674659784901" duration="456000" />
+      <workItem from="1674670659397" duration="43000" />
+      <workItem from="1674671712957" duration="19000" />
+      <workItem from="1674741729187" duration="3064000" />
+      <workItem from="1674761879232" duration="2194000" />
     </task>
     <task id="LOCAL-00001" summary="Added: competition with relation many to many(quiz-user) ;">
       <created>1668801081434</created>
@@ -284,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670646908630</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added: added user profile and image for them. Also, some management system for admin and moderators!">
+      <created>1671867336172</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671867336172</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +304,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added: competition with relation many to many(quiz-user) ;" />
     <MESSAGE value="Added: storage and languages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added: storage and languages" />
+    <MESSAGE value="Added: added user profile and image for them. Also, some management system for admin and moderators!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added: added user profile and image for them. Also, some management system for admin and moderators!" />
   </component>
 </project>

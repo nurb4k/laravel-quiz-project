@@ -35,7 +35,7 @@
         <a class="large_logo" href="#"><h2>QUIZ</h2></a>
         <a class="small_logo" href="#"><h5>Quiz</h5></a>
         <div class="sidebar_close_icon d-lg-none">
-            <i class="ti-close"></i>
+            <i class="ti-close"><p>close menu</p></i>
         </div>
     </div>
 
@@ -111,7 +111,6 @@
         @endif
         @can('moder',\Illuminate\Support\Facades\Auth::user())
 
-            {{--            @if(\Illuminate\Support\Facades\Auth::check() && \Illuminate\Support\Facades\Auth::user()->role_id == 2)--}}
             <li>
                 <a href="{{ route('mdr.quizzes.index') }}" aria-expanded="false">
                     <div class="nav_icon_small">
@@ -133,7 +132,6 @@
                 </a>
             </li>
 
-            {{--            @endif--}}
         @endcan
 
 
@@ -147,102 +145,105 @@
             <div class="col-lg-12 p-0 ">
                 <div class="header_iner d-flex justify-content-between align-items-center">
                     <div class="sidebar_icon d-lg-none">
-                        <i class="ti-menu"></i>
+                        <i class="ti-menu"><a href="#">MENU</a></i>
                     </div>
                     <label class="form-label switch_toggle d-none d-lg-block" for="checkbox">
                         <input type="checkbox" id="checkbox">
                         <div class="slider round open_miniSide"></div>
                     </label>
                     <div class="header_right d-flex justify-content-between align-items-center">
-                        <div class="header_notification_warp d-flex align-items-center">
+                        {{--                        <div class="header_notification_warp d-flex align-items-center">--}}
 
-                            <li>
-                                <a class="bell_notification_clicker" href="#"> <img src="img/icon/bell.svg" alt="">
-                                    <span>2</span>
-                                </a>
+                        {{--                            <li>--}}
+                        {{--                                <a class="bell_notification_clicker" href="#"> <img src="img/icon/bell.svg" alt="">--}}
+                        {{--                                    <span>2</span>--}}
+                        {{--                                </a>--}}
 
-                                <div class="Menu_NOtification_Wrap">
-                                    <div class="notification_Header">
-                                        <h4>Notifications</h4>
-                                    </div>
-                                    <div class="Notification_body">
+                        {{--                                <div class="Menu_NOtification_Wrap">--}}
+                        {{--                                    <div class="notification_Header">--}}
+                        {{--                                        <h4>Notifications</h4>--}}
+                        {{--                                    </div>--}}
+                        {{--                                    <div class="Notification_body">--}}
 
-                                        <div class="single_notify d-flex align-items-center">
-                                            <div class="notify_thumb">
-                                                <a href="#"><img src="img/staf/2.png" alt=""></a>
-                                            </div>
-                                            <div class="notify_content">
-                                                <a href="#"><h5>Cool Marketing </h5></a>
-                                                <p>Lorem ipsum dolor sit amet</p>
-                                            </div>
-                                        </div>
+                        {{--                                        <div class="single_notify d-flex align-items-center">--}}
+                        {{--                                            <div class="notify_thumb">--}}
+                        {{--                                                <a href="#"><img src="img/staf/2.png" alt=""></a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="notify_content">--}}
+                        {{--                                                <a href="#"><h5>Cool Marketing </h5></a>--}}
+                        {{--                                                <p>Lorem ipsum dolor sit amet</p>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
 
-                                        <div class="single_notify d-flex align-items-center">
-                                            <div class="notify_thumb">
-                                                <a href="#"><img src="img/staf/4.png" alt=""></a>
-                                            </div>
-                                            <div class="notify_content">
-                                                <a href="#"><h5>Awesome packages</h5></a>
-                                                <p>Lorem ipsum dolor sit amet</p>
-                                            </div>
-                                        </div>
+                        {{--                                        <div class="single_notify d-flex align-items-center">--}}
+                        {{--                                            <div class="notify_thumb">--}}
+                        {{--                                                <a href="#"><img src="img/staf/4.png" alt=""></a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="notify_content">--}}
+                        {{--                                                <a href="#"><h5>Awesome packages</h5></a>--}}
+                        {{--                                                <p>Lorem ipsum dolor sit amet</p>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
 
-                                        <div class="single_notify d-flex align-items-center">
-                                            <div class="notify_thumb">
-                                                <a href="#"><img src="img/staf/3.png" alt=""></a>
-                                            </div>
-                                            <div class="notify_content">
-                                                <a href="#"><h5>what a packages</h5></a>
-                                                <p>Lorem ipsum dolor sit amet</p>
-                                            </div>
-                                        </div>
+                        {{--                                        <div class="single_notify d-flex align-items-center">--}}
+                        {{--                                            <div class="notify_thumb">--}}
+                        {{--                                                <a href="#"><img src="img/staf/3.png" alt=""></a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="notify_content">--}}
+                        {{--                                                <a href="#"><h5>what a packages</h5></a>--}}
+                        {{--                                                <p>Lorem ipsum dolor sit amet</p>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
 
-                                        <div class="single_notify d-flex align-items-center">
-                                            <div class="notify_thumb">
-                                                <a href="#"><img src="img/staf/2.png" alt=""></a>
-                                            </div>
-                                            <div class="notify_content">
-                                                <a href="#"><h5>Cool Marketing </h5></a>
-                                                <p>Lorem ipsum dolor sit amet</p>
-                                            </div>
-                                        </div>
+                        {{--                                        <div class="single_notify d-flex align-items-center">--}}
+                        {{--                                            <div class="notify_thumb">--}}
+                        {{--                                                <a href="#"><img src="img/staf/2.png" alt=""></a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="notify_content">--}}
+                        {{--                                                <a href="#"><h5>Cool Marketing </h5></a>--}}
+                        {{--                                                <p>Lorem ipsum dolor sit amet</p>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
 
-                                        <div class="single_notify d-flex align-items-center">
-                                            <div class="notify_thumb">
-                                                <a href="#"><img src="img/staf/4.png" alt=""></a>
-                                            </div>
-                                            <div class="notify_content">
-                                                <a href="#"><h5>Awesome packages</h5></a>
-                                                <p>Lorem ipsum dolor sit amet</p>
-                                            </div>
-                                        </div>
+                        {{--                                        <div class="single_notify d-flex align-items-center">--}}
+                        {{--                                            <div class="notify_thumb">--}}
+                        {{--                                                <a href="#"><img src="img/staf/4.png" alt=""></a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="notify_content">--}}
+                        {{--                                                <a href="#"><h5>Awesome packages</h5></a>--}}
+                        {{--                                                <p>Lorem ipsum dolor sit amet</p>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
 
-                                        <div class="single_notify d-flex align-items-center">
-                                            <div class="notify_thumb">
-                                                <a href="#"><img src="img/staf/3.png" alt=""></a>
-                                            </div>
-                                            <div class="notify_content">
-                                                <a href="#"><h5>what a packages</h5></a>
-                                                <p>Lorem ipsum dolor sit amet</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="nofity_footer">
-                                        <div class="submit_button text-center pt_20">
-                                            <a href="#" class="btn_1">See More</a>
-                                        </div>
-                                    </div>
-                                </div>
+                        {{--                                        <div class="single_notify d-flex align-items-center">--}}
+                        {{--                                            <div class="notify_thumb">--}}
+                        {{--                                                <a href="#"><img src="img/staf/3.png" alt=""></a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="notify_content">--}}
+                        {{--                                                <a href="#"><h5>what a packages</h5></a>--}}
+                        {{--                                                <p>Lorem ipsum dolor sit amet</p>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                    </div>--}}
+                        {{--                                    <div class="nofity_footer">--}}
+                        {{--                                        <div class="submit_button text-center pt_20">--}}
+                        {{--                                            <a href="#" class="btn_1">See More</a>--}}
+                        {{--                                        </div>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
 
-                            </li>
-                            <li>
-                                <a class="CHATBOX_open" href="#"> <img src="img/icon/msg.svg" alt=""> <span>2</span>
-                                </a>
-                            </li>
-                        </div>
+                        {{--                            </li>--}}
+                        {{--                            <li>--}}
+                        {{--                                <a class="CHATBOX_open" href="#"> <img src="img/icon/msg.svg" alt=""> <span>2</span>--}}
+                        {{--                                </a>--}}
+                        {{--                            </li>--}}
+                        {{--                        </div>--}}
                         @guest()
                             <div class="profile_info">
-                                <img src="https://static.thenounproject.com/png/770826-200.png" width="34px" alt="#">
+                                <a href="{{route('login')}}">
+                                    <img src="https://static.thenounproject.com/png/770826-200.png" width="34px"
+                                         alt="#">
+                                </a>
                             </div>
                         @else
                             <div class="profile_info">
@@ -319,8 +320,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer_iner text-center">
-                        <p>2020 © Influence - Designed by <a href="#"> <i class="ti-heart"></i> </a><a href="#">
-                                DashboardPack</a></p>
+                        <p>2022-{{\Carbon\Carbon::now()->year}} Developed by Nurbek Akmoldayev at NARXOZ university<a href="#">
+                                email: nurb8k@gmail.com</a></p>
                     </div>
                 </div>
             </div>
@@ -451,7 +452,7 @@
 
 <script src="js/popper1.min.js"></script>
 
-<script  src="js/bootstrap1.min.js"></script>
+<script src="js/bootstrap1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 
 <script src="js/metisMenu.js"></script>

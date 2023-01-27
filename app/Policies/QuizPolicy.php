@@ -36,7 +36,7 @@ class QuizPolicy
 
     public function delete(User $user, Quiz $quiz)
     {
-        return ($user->id == $quiz->user_id) || ($user->role = !"user");
+        return ($user->role = "moderator");
     }
 
 

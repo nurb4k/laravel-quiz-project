@@ -5,7 +5,6 @@
         <div class="row justify-content-center">
             <div class="col-md-10 ">
                 @can('create',\App\Models\Quiz::class)
-
                     <a class="btn btn-success mb-3 mt-3"
                        href="{{ route('quizzes.create') }}">{{__('messages.createQuiz')}}</a>
                 @endcan
@@ -21,6 +20,7 @@
 
                                     <div class="white_box_tittle  <?php echo $items[array_rand($items)]; ?>  ">
                                         <div class="main-title2 ">
+                                            <p>{{$quiz->category->name}}</p>
 
                                             <h5 class="mb-2 nowrap text_white">{{$quiz->name}}</h5>
                                             <img src="{{asset($quiz->img)}}" width="300px">

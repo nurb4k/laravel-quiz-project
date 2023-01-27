@@ -26,9 +26,11 @@
         </tr>
         </thead>
         <tbody>
+
         @for($i=0;$i<count($quizzes);$i++)
             <tr>
                 <th scope="row">{{$i+1}}</th>
+
                 <td>{{$quizzes[$i]->name}}</td>
                 <td>{{$quizzes[$i]->user->name}}</td>
                 <td><img src="{{asset($quizzes[$i]->img)}}" width="150px" alt=""></td>
@@ -41,7 +43,7 @@
                 <td>
                     <form action="{{route('mdr.quiz.update',$quizzes[$i])}}" method="post">
                         @csrf
-                        <input type="datetime-local" name="deadline" value="{{$quizzesOk[$i]->deadline}}"
+                        <input type="datetime-local" name="deadline" value="{{$quizzes[$i]->deadline}}"
                                class="form-control @error('deadline') is-invalid @enderror "
                                placeholder="dd-mm-yyyy">
                         <button type="submit" class="btn btn-primary">{{__('messages.update')}}</button>
@@ -76,7 +78,7 @@
 
         @for($i=0;$i<count($quizzesOk);$i++)
             <tr>
-                <th scope="row">{{$i+1}}</th>
+                <th scope="row">{{ $i+1}}</th>
                 <td>{{$quizzesOk[$i]->name}}</td>
                 <td>{{$quizzesOk[$i]->user->name}}</td>
                 <td><img src="{{asset($quizzesOk[$i]->img)}}" width="150px" alt=""></td>
