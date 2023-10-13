@@ -1,4 +1,4 @@
-# [Laravel Quiz App by nurb8k]
+# [Laravel Quiz App by Nurbek Akmoldayev (@nurb4k. @nurb8k]
 ----------
 
 # Getting started
